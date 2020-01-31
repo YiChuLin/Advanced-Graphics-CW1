@@ -1,2 +1,4 @@
+0.08332286
+2.5180352e-06
 max brightness - min brightness 0.08332034
 
