@@ -37,7 +37,7 @@ if '__main__' == __name__:
 				#define the normal vector for this pixel
 				y = (center_pixel - i)/radius; x = -(center_pixel-j)/radius
 				z_comp = np.sqrt(1-(x**2+y**2))
-		        n = np.array([x, y, z_comp])
+				n = np.array([x, y, z_comp])
 				# calculate r given n and v
 				r = 2*np.dot(n,v)*n-v
 				# store n and r in the blank images

@@ -57,7 +57,10 @@ if '__main__' == __name__:
 	# Save as pfm
 	F_rgb = colors.hsv_to_rgb(F)
 	writePFM('part1img/output_results.pfm',F_rgb)
-	writePPM('part1img/output_results.ppm',(F_rgb*255.0).astype('uint8'))
+	F_normalized = F.copy()
+	F_normalized[:,:,2] = (F[:,:,2] - F[:,:,2].min())/F[:,:,2].max()
+	F_nrgb = colors.hsv_to_rgb(F_normalized)
+	writePPM('part1img/output_results.ppm',(F_nrgb*255.0).astype('uint8'))
 	# print out the dynamic range
 	print(F[:,:,2].max())
 	print(F[:,:,2].min())
