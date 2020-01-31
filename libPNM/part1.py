@@ -58,6 +58,8 @@ if '__main__' == __name__:
 	F_rgb = colors.hsv_to_rgb(F)
 	writePFM('part1img/output_results.pfm',F_rgb)
 	# print out the dynamic range
+	print(F[:,:,2].max())
+	print(F[:,:,2].min())
 	print('max brightness - min brightness '+str(F[:,:,2].max()-F[:,:,2].min()))
 	# Here we visualize the HDR image with various tone mappers
 	save_params = [(5,1), (6,1), (7,1),(8,1),(9,1),(10,1),(11,1),(12,1),(5,3.0),(6,3.0),(7,2.5),(7,3.0),(8,2.2),(8,2.5)]
